@@ -23,10 +23,9 @@ async def run():
         user='postgres',
         password='sWoiCMX3j30seiE5YhDy',
         database='punchclock3',
-        #host='punchclock3.csix0yevpcqs.sa-east-1.rds.amazonaws.com',
-        host='18.228.200.22',
-        port=5432,
-        timeout=30
+        host='punchclock3.csix0yevpcqs.sa-east-1.rds.amazonaws.com',
+        #host='18.228.200.22',
+        port=5432
     )
 
     print('CONECTADO')

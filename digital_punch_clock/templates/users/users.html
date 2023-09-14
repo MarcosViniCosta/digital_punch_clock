@@ -1,0 +1,30 @@
+<script type="text/hyperscript">
+ def changeTab(tab)
+    set otherTabs to [#tab_list, #tab_form]
+    set contentDivs to [#content_list, #content_form]
+
+    for otherTab in otherTabs index i
+        if tab == otherTab
+            add .is-active to otherTab
+            remove .is-hidden from contentDivs[i]
+        else
+            remove .is-active from otherTab
+            add .is-hidden to contentDivs[i]
+    end
+ end
+</script>
+
+<h1 class="title is-3 has-text-centered has-text-warning">Cadastro de usuários</h1>
+<hr>
+
+<div class="tabs is-centered">
+    <ul>
+        <li class="is-active" id="tab_list" _="on click call changeTab(me)"><a>Listagem</a></li>
+        <li  id="tab_form" _="on click call changeTab(me)"><a>Formulário</a></li>
+    </ul>
+</div>
+
+
+
+<div id="content_list">{% include 'users/list.html'%}</div>
+<div class="is-hidden" id="content_form">{% include 'users/form.html'%}</div>
